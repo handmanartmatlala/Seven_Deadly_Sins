@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="ProceduralSky" id=1]
+sky_top_color = Color( 0.945098, 0.466667, 0.203922, 1 )
+sky_horizon_color = Color( 0.980392, 0.980392, 0.839216, 1 )
+ground_bottom_color = Color( 0.211765, 0.176471, 0.156863, 1 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 2.01414, 0, 0, 0, 0.0232313, 0, 0, 0, 1.32324, 0, 0, 0 )
+height = 2.28236
