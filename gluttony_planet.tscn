@@ -1,0 +1,276 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://building3.jpg" type="Texture" id=1]
+[ext_resource path="res://building5.jpg" type="Texture" id=2]
+[ext_resource path="res://building4.jpg" type="Texture" id=3]
+[ext_resource path="res://building2.jpg" type="Texture" id=4]
+[ext_resource path="res://ship_only.tscn" type="PackedScene" id=5]
+[ext_resource path="res://handman_lowpoly_waving.tscn" type="PackedScene" id=6]
+[ext_resource path="res://NewFPS.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Area_gluttony.gd" type="Script" id=8]
+[ext_resource path="res://birds-by-the-road-in-the-city-birds-cars-highway-noise-13638.mp3" type="AudioStream" id=9]
+
+[sub_resource type="ProceduralSky" id=1]
+sky_top_color = Color( 0.027451, 0.12549, 0.388235, 1 )
+sky_horizon_color = Color( 0.2, 0.0941176, 0.345098, 1 )
+ground_bottom_color = Color( 0.0784314, 0.0980392, 0.117647, 1 )
+ground_horizon_color = Color( 0.266667, 0.239216, 0.219608, 1 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.337255, 0.337255, 0.337255, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0.054902, 0.054902, 0.054902, 1 )
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_color = Color( 0.0431373, 0.0431373, 0.0431373, 1 )
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_color = Color( 0.00784314, 0.00784314, 0.00784314, 1 )
+
+[sub_resource type="BoxShape" id=14]
+extents = Vector3( 0.268153, 0.27673, 0.2368 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 2.19909, 0, 0, 0, 0.0139947, 0, 0, 0, 1.47271, 0, 0, 0 )
+use_collision = true
+material = SubResource( 7 )
+
+[node name="Buildings" type="Spatial" parent="CSGBox"]
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox/Buildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.228544, 57.4762, 0.790747 )
+width = 0.28296
+height = 114.802
+depth = 0.325019
+material = SubResource( 4 )
+
+[node name="CSGBox2" type="CSGBox" parent="CSGBox/Buildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.225787, 57.4762, -0.786576 )
+width = 0.28296
+height = 114.802
+depth = 0.325019
+material = SubResource( 4 )
+
+[node name="CSGBox4" type="CSGBox" parent="CSGBox/Buildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.684937, 57.4762, -0.286174 )
+width = 0.28296
+height = 114.802
+depth = 0.325019
+material = SubResource( 4 )
+
+[node name="CSGBox3" type="CSGBox" parent="CSGBox/Buildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.69049, 57.4762, 0.263269 )
+width = 0.28296
+height = 114.802
+depth = 0.325019
+material = SubResource( 4 )
+
+[node name="CSGBox7" type="CSGBox" parent="CSGBox/Buildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.228649, 45.843, -0.277165 )
+width = 0.28296
+height = 91.19
+depth = 0.325019
+material = SubResource( 6 )
+
+[node name="CSGBox9" type="CSGBox" parent="CSGBox/Buildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.680442, 45.843, -0.781242 )
+width = 0.28296
+height = 91.19
+depth = 0.325019
+material = SubResource( 6 )
+
+[node name="CSGBox8" type="CSGBox" parent="CSGBox/Buildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.687628, 45.843, 0.79163 )
+width = 0.28296
+height = 91.19
+depth = 0.325019
+material = SubResource( 6 )
+
+[node name="CSGBox10" type="CSGBox" parent="CSGBox/Buildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.232415, 45.843, 0.276256 )
+width = 0.28296
+height = 91.19
+depth = 0.325019
+material = SubResource( 6 )
+
+[node name="CSGBox11" type="CSGBox" parent="CSGBox/Buildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.228649, 49.1675, 0.268196 )
+width = 0.28296
+height = 98.465
+depth = 0.325019
+material = SubResource( 5 )
+
+[node name="CSGBox14" type="CSGBox" parent="CSGBox/Buildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68298, 49.1675, 0.791224 )
+width = 0.28296
+height = 98.465
+depth = 0.325019
+material = SubResource( 5 )
+
+[node name="CSGBox12" type="CSGBox" parent="CSGBox/Buildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.682552, 49.1675, -0.269992 )
+width = 0.28296
+height = 98.465
+depth = 0.325019
+material = SubResource( 5 )
+
+[node name="CSGBox15" type="CSGBox" parent="CSGBox/Buildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.232553, 49.1675, -0.792055 )
+width = 0.28296
+height = 98.465
+depth = 0.325019
+material = SubResource( 5 )
+
+[node name="CSGBox13" type="CSGBox" parent="CSGBox/Buildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.228544, 81.518, -0.260553 )
+width = 0.28296
+height = 164.491
+depth = 0.325019
+material = SubResource( 3 )
+
+[node name="CSGBox16" type="CSGBox" parent="CSGBox/Buildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22325, 81.518, 0.800665 )
+width = 0.28296
+height = 164.491
+depth = 0.325019
+material = SubResource( 3 )
+
+[node name="CSGBox17" type="CSGBox" parent="CSGBox/Buildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.687735, 81.518, 0.262476 )
+width = 0.28296
+height = 164.491
+depth = 0.325019
+material = SubResource( 3 )
+
+[node name="CSGBox18" type="CSGBox" parent="CSGBox/Buildings"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.687953, 81.518, -0.791162 )
+width = 0.28296
+height = 164.491
+depth = 0.325019
+material = SubResource( 3 )
+
+[node name="Lights" type="Spatial" parent="CSGBox"]
+transform = Transform( 0.454734, 0, 0, 0, -2.96809e-08, 71.4556, 0, -0.67902, -2.82048e-10, -0.466709, 50.5915, 0.00212369 )
+
+[node name="SpotLight" type="SpotLight" parent="CSGBox/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 2.77556e-17, 0, 0, 1, 0.016745, 0.714454, 2.95467e-10 )
+
+[node name="SpotLight2" type="SpotLight" parent="CSGBox/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 2.77556e-17, 0, 0, 1, 1.04377, 0.714454, 2.95467e-10 )
+
+[node name="SpotLight3" type="SpotLight" parent="CSGBox/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 2.77556e-17, 0, 0, 1, 0.016745, 0.714454, 2.95467e-10 )
+
+[node name="SpotLight4" type="SpotLight" parent="CSGBox/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 2.77556e-17, 0, 0, 1, 2.03731, 0.714454, 2.95467e-10 )
+
+[node name="SpotLight5" type="SpotLight" parent="CSGBox/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 2.77556e-17, 0, 0, 1, 0.016745, -0.798178, -3.32843e-10 )
+
+[node name="SpotLight6" type="SpotLight" parent="CSGBox/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 2.77556e-17, 0, 0, 1, 1.01586, -0.80376, -3.35161e-10 )
+
+[node name="SpotLight7" type="SpotLight" parent="CSGBox/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 2.77556e-17, 0, 0, 1, 2.04289, -0.80376, -3.35161e-10 )
+
+[node name="SpotLight8" type="SpotLight" parent="CSGBox/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 2.77556e-17, 0, 0, 1, 2.04289, -6.12605e-11, -1.29912e-12 )
+
+[node name="SpotLight9" type="SpotLight" parent="CSGBox/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 2.77556e-17, 0, 0, 1, 1.03261, -6.12605e-11, -1.29912e-12 )
+
+[node name="SpotLight10" type="SpotLight" parent="CSGBox/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 2.77556e-17, 0, 0, 1, 0, -6.12605e-11, -1.29912e-12 )
+
+[node name="Streets" type="Spatial" parent="CSGBox"]
+
+[node name="CSGBox" type="CSGBox" parent="CSGBox/Streets"]
+transform = Transform( 0.0616485, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.738609, 0 )
+height = 2.332
+material = SubResource( 8 )
+
+[node name="CSGBox2" type="CSGBox" parent="CSGBox/Streets"]
+transform = Transform( 0.0616485, 0, 0, 0, 1, 0, 0, 0, 1, 0.462313, 0.738609, 0 )
+height = 2.332
+material = SubResource( 9 )
+
+[node name="CSGBox3" type="CSGBox" parent="CSGBox/Streets"]
+transform = Transform( 0.0616485, 0, 0, 0, 1, 0, 0, 0, 1, -0.454697, 0.738609, 0 )
+height = 2.332
+material = SubResource( 10 )
+
+[node name="CSGBox4" type="CSGBox" parent="CSGBox/Streets"]
+transform = Transform( -2.69474e-09, 0, -1, 0, 1, 0, 0.0616485, 0, -4.37114e-08, 0, 0.738609, -0.531535 )
+height = 2.332
+material = SubResource( 11 )
+
+[node name="CSGBox5" type="CSGBox" parent="CSGBox/Streets"]
+transform = Transform( -2.69474e-09, 0, -1, 0, 1, 0, 0.0616485, 0, -4.37114e-08, -0.00203108, 0.738609, 0 )
+height = 2.332
+material = SubResource( 12 )
+
+[node name="CSGBox6" type="CSGBox" parent="CSGBox/Streets"]
+transform = Transform( -2.69474e-09, 0, -1, 0, 1, 0, 0.0616485, 0, -4.37114e-08, -0.00123557, 0.738609, 0.541697 )
+height = 2.332
+material = SubResource( 13 )
+
+[node name="handman_lowpoly_waving" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.017, 0, 0, 0, 0.017, 0, 0, 0, 0.017, -1.07688, 0.0269281, 0.718008 )
+
+[node name="hangar2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 0.12, 0, 0, 0, 0.12, 0, 0, 0, 0.12, -1.1533, 0.0952211, 0.80873 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.999528, 0.030713, 0, -0.030713, 0.999528, -1.07688, 0.0407932, 1.00536 )
+shadow_color = Color( 0.658824, 0.658824, 0.658824, 1 )
+
+[node name="NewFPS" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.013, 0, 0, 0, 0.013, 0, 0, 0, 0.013, 0, 0.0565206, 0.899898 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.245855, 0.899898 )
+
+[node name="SceneSwitcher" type="Spatial" parent="."]
+transform = Transform( 0.517555, 0, 0, 0, 0.645795, 0, 0, 0, 1, -1.04649, 0, 0.706653 )
+
+[node name="Area" type="Area" parent="SceneSwitcher"]
+script = ExtResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="SceneSwitcher/Area"]
+transform = Transform( 0.20503, 0, 0, 0, 0.186613, 0, 0, 0, 0.147571, -0.0529784, 0.0795507, 0.0268314 )
+shape = SubResource( 14 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
